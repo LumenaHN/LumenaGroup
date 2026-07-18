@@ -428,7 +428,6 @@ svg.icon {
   mask-image: radial-gradient(ellipse 62% 58% at 48% 50%, black 45%, transparent 92%);
 }
 :root[data-theme="light"] .hero-visual-img { display: none; }
-@media (max-width: 640px) { .hero-visual-img { display: none; } }
 .floating-chip {
   position: absolute;
   display: flex; align-items: center; gap: 0.5rem;
@@ -448,13 +447,12 @@ svg.icon {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
-.orbit-ring { animation: orbit-spin 48s linear infinite; }
-.orbit-ring.r2 { animation-duration: 64s; animation-direction: reverse; }
-.orbit-ring.r3 { animation-duration: 36s; }
-/* Mobile hero: drop the decorative floating chips so headline + CTA lead immediately
-   (content-priority) — this is a deliberate mobile layout decision, not a shrunk desktop visual. */
+/* Mobile hero: keep the artwork + floating chips, just scaled down — a smaller,
+   purpose-sized version rather than a shrunk desktop layout or an omitted visual. */
 @media (max-width: 640px) {
-  .hero-visual { display: none; }
+  .hero-visual { min-height: 230px; max-width: 340px; margin-top: 1rem; }
+  .floating-chip { padding: 0.45rem 0.7rem; font-size: 0.7rem; gap: 0.35rem; }
+  .floating-chip svg { width: 0.9rem; height: 0.9rem; }
 }
 
 /* ---------- Cards ---------- */
