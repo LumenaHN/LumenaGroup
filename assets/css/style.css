@@ -19,6 +19,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Design tokens ---------- */
 :root {
+  color-scheme: dark;
   /* Brand */
   --brand-blue: #0BA4F2;
   --brand-blue-dark: #0876B0;
@@ -90,6 +91,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 :root[data-theme="light"] {
+  color-scheme: light;
   --bg: #F5F7FB;
   --bg-elevated: #FFFFFF;
   --surface: #FFFFFF;
