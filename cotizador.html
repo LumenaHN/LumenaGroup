@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="quote.title">Cotizador — Lumena Group</title>
+<meta name="description" content="Calcula el estimado de tu proyecto de marketing digital, desarrollo web, app o herramienta de cálculo con Lumena Group.">
+<meta name="theme-color" content="#0A0E17">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumena Group">
+<meta property="og:locale" content="es_HN">
+<meta property="og:title" content="Cotizador — Lumena Group">
+<meta property="og:description" content="Calcula el estimado de tu proyecto de marketing digital, desarrollo web, app o herramienta de cálculo con Lumena Group.">
+<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cotizador — Lumena Group">
+<meta name="twitter:description" content="Calcula el estimado de tu proyecto de marketing digital, desarrollo web, app o herramienta de cálculo con Lumena Group.">
+<meta name="twitter:image" content="assets/img/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+(function(){
+  try {
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('lumena_theme') || 'dark');
+    document.documentElement.setAttribute('lang', localStorage.getItem('lumena_lang') || 'es');
+  } catch(e) {}
+})();
+</script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+
+<symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+  <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+</symbol>
+
+<symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+  <line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/>
+</symbol>
+
+<symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+  <circle cx="12" cy="12" r="4.5"/>
+  <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
+  <line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/>
+  <line x1="4.5" y1="4.5" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.5" y2="19.5"/>
+  <line x1="19.5" y1="4.5" x2="17.8" y2="6.2"/><line x1="6.2" y1="17.8" x2="4.5" y2="19.5"/>
+</symbol>
+
+<symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 6.8 6.8 0 0 0 20 14.5Z"/>
+</symbol>
+
+<symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="5 8 12 15 19 8"/>
+</symbol>
+
+<symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/>
+</symbol>
+
+<symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="4 12.5 9.5 18 20 6"/>
+</symbol>
+
+<symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9.25"/><polyline points="7.5 12.5 10.5 15.5 16.5 9"/>
+</symbol>
+
+<symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.86.51 3.6 1.4 5.09L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2Zm0 18.1c-1.62 0-3.14-.44-4.44-1.22l-.32-.19-3 .79.8-2.93-.21-.3A8.06 8.06 0 0 1 3.9 12c0-4.48 3.65-8.1 8.12-8.1 4.47 0 8.1 3.62 8.1 8.1 0 4.48-3.63 8.1-8.1 8.1Zm4.45-6.06c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.74 2.66 4.22 3.72.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.11-.22-.17-.46-.29Z"/>
+</symbol>
+
+<symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+  <rect x="3" y="3" width="18" height="18" rx="5"/>
+  <circle cx="12" cy="12" r="4.2"/>
+  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+</symbol>
+
+<symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M14.5 8.5H16.5V5.2C16.16 5.15 15 5.05 13.65 5.05C10.83 5.05 8.9 6.78 8.9 9.94V12.5H6V16.15H8.9V22H12.6V16.15H15.38L15.85 12.5H12.6V10.31C12.6 9.28 12.88 8.5 14.5 8.5Z"/>
+</symbol>
+
+<symbol id="icon-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 11v2a1.5 1.5 0 0 0 1.5 1.5H6l1 5h2l-.6-5H10l8 4V6l-8 4H4.5A1.5 1.5 0 0 0 3 11Z"/>
+  <path d="M18 9.5a3 3 0 0 1 0 5"/>
+</symbol>
+
+<symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="9 8 4.5 12 9 16"/><polyline points="15 8 19.5 12 15 16"/><line x1="13.5" y1="6" x2="10.5" y2="18"/>
+</symbol>
+
+<symbol id="icon-devices" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="4.5" width="13" height="9.5" rx="1.2"/>
+  <line x1="6" y1="17.5" x2="12" y2="17.5"/>
+  <rect x="15.5" y="9" width="6" height="10.5" rx="1.2"/>
+</symbol>
+
+<symbol id="icon-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="4.5" y="2.5" width="15" height="19" rx="2"/>
+  <line x1="7.5" y1="6" x2="16.5" y2="6"/>
+  <line x1="7.5" y1="11" x2="7.5" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16.5" y1="11" x2="16.5" y2="11.01"/>
+  <line x1="7.5" y1="14.7" x2="7.5" y2="14.71"/><line x1="12" y1="14.7" x2="12" y2="14.71"/><line x1="16.5" y1="14.7" x2="16.5" y2="14.71"/>
+  <line x1="7.5" y1="18.4" x2="7.5" y2="18.41"/><line x1="12" y1="18.4" x2="12" y2="18.41"/><line x1="16.5" y1="18.4" x2="16.5" y2="18.41"/>
+</symbol>
+
+<symbol id="icon-chart-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="20" x2="20" y2="20"/>
+  <rect x="6" y="13" width="3" height="7"/><rect x="10.5" y="9" width="3" height="11"/><rect x="15" y="5" width="3" height="15"/>
+</symbol>
+
+<symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8.5" cy="8" r="3"/><path d="M2.8 19c.6-3 3-5 5.7-5s5.1 2 5.7 5"/>
+  <circle cx="16.5" cy="8.5" r="2.4"/><path d="M15.2 14.2c2 .2 3.9 1.9 4.4 4.3"/>
+</symbol>
+
+<symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+</symbol>
+
+<symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 2.5c3 1.3 5 4.4 5 8.4 0 2-1 4.7-2.3 6.1l-2.7 2.5-2.7-2.5C8 15.6 7 12.9 7 10.9c0-4 2-7.1 5-8.4Z"/>
+  <circle cx="12" cy="10" r="1.8"/>
+  <path d="M8.3 16.7 6 19.5l.6-3.6M15.7 16.7 18 19.5l-.6-3.6"/>
+</symbol>
+
+<symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 2.8 19 5.5v6c0 4.6-2.9 8.2-7 9.7-4.1-1.5-7-5.1-7-9.7v-6Z"/>
+  <polyline points="8.7 12.2 11 14.5 15.5 9.8"/>
+</symbol>
+
+<symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14.5"/>
+</symbol>
+
+<symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21.5s7-6.4 7-11.8A7 7 0 0 0 5 9.7c0 5.4 7 11.8 7 11.8Z"/><circle cx="12" cy="9.7" r="2.4"/>
+</symbol>
+
+<symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.8" y="5" width="18.4" height="14" rx="2"/><polyline points="3.5 6 12 12.5 20.5 6"/>
+</symbol>
+
+<symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M12 2.8 14.6 9l6.6.5-5 4.4 1.5 6.4L12 16.9 6.3 20.3l1.5-6.4-5-4.4L9.4 9Z"/>
+</symbol>
+
+<symbol id="icon-quote" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M4 8.4C4 6 5.9 4 8.4 4v2.3c-1.2 0-2.1 1-2.1 2.1v.4h2.1V15H4V8.4Zm9.6 0c0-2.4 1.9-4.4 4.4-4.4v2.3c-1.2 0-2.1 1-2.1 2.1v.4h2.1V15h-4.4V8.4Z"/>
+</symbol>
+
+<symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <polygon points="12 3 21 8 12 13 3 8"/><polyline points="3 13 12 18 21 13"/><polyline points="3 17.5 12 22.5 21 17.5"/>
+</symbol>
+
+<symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.8" y="7.5" width="18.4" height="12" rx="2"/><path d="M8.5 7.5V5.8A1.8 1.8 0 0 1 10.3 4h3.4a1.8 1.8 0 0 1 1.8 1.8V7.5"/><line x1="2.8" y1="12.5" x2="21.2" y2="12.5"/>
+</symbol>
+
+<symbol id="icon-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3.5 15.5a8.5 8.5 0 1 1 17 0"/><line x1="12" y1="15.5" x2="15.5" y2="10.5"/><line x1="3.5" y1="15.5" x2="5" y2="15.5"/><line x1="19" y1="15.5" x2="20.5" y2="15.5"/>
+</symbol>
+
+<symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/>
+  <path d="M4.5 5.5V18c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5"/>
+  <path d="M4.5 11.8c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>
+</symbol>
+
+<symbol id="icon-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6.5 2.8h7l4 4v13.4a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1V3.8a1 1 0 0 1 1-1Z"/>
+  <polyline points="13.5 2.8 13.5 6.8 17.5 6.8"/>
+  <polyline points="8.8 14 10.8 16 15.2 11.3"/>
+</symbol>
+
+<symbol id="icon-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="9" cy="7" rx="6" ry="3.2"/>
+  <path d="M3 7v4.5c0 1.8 2.7 3.2 6 3.2s6-1.4 6-3.2V7"/>
+  <path d="M3 11.5V16c0 1.8 2.7 3.2 6 3.2 1 0 1.9-.1 2.8-.4"/>
+  <path d="M13.5 12.3c.7-.3 1.6-.4 2.5-.4 3.3 0 6 1.4 6 3.2s-2.7 3.2-6 3.2-6-1.4-6-3.2"/>
+</symbol>
+
+<symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/>
+  <path d="M12 3c2.5 2.4 4 5.6 4 9s-1.5 6.6-4 9c-2.5-2.4-4-5.6-4-9s1.5-6.6 4-9Z"/>
+</symbol>
+
+<symbol id="icon-drone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="9.5" y="9.5" width="5" height="5" rx="1"/>
+  <line x1="9.5" y1="9.5" x2="4.5" y2="4.5"/><line x1="14.5" y1="9.5" x2="19.5" y2="4.5"/>
+  <line x1="9.5" y1="14.5" x2="4.5" y2="19.5"/><line x1="14.5" y1="14.5" x2="19.5" y2="19.5"/>
+  <circle cx="4.5" cy="4.5" r="2"/><circle cx="19.5" cy="4.5" r="2"/><circle cx="4.5" cy="19.5" r="2"/><circle cx="19.5" cy="19.5" r="2"/>
+</symbol>
+
+<symbol id="icon-heart-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 20.2s-7.4-4.6-9.7-9.3C.9 7.3 2.6 4 6 4c2 0 3.4 1.1 4.2 2.3.4.6 1.2.6 1.6 0C12.6 5.1 14 4 16 4c3.4 0 5.1 3.3 3.7 6.9-.4 1-1 2-1.7 2.9h-3.2l-1.4-2.4-2 3.6-1.2-1.9H6.6"/>
+</symbol>
+
+</defs>
+</svg>
+
+<a href="#main" class="skip-link" data-i18n="a11y.skip">Saltar al contenido principal</a>
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Lumena Group">
+      <img src="assets/img/logo-lumena-transparent.png" alt="Lumena Group" width="70" height="44" style="height:44px;width:auto">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+      <a href="portafolio.html" data-i18n="nav.portfolio">Portafolio</a>
+      <a href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+      <a href="cotizador.html" data-i18n="nav.quote">Cotizador</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button type="button" class="icon-btn theme-toggle" aria-label="Cambiar tema / Toggle theme">
+        <svg class="icon"><use href="#icon-sun"></use></svg>
+      </button>
+      <a href="contacto.html" class="btn btn-primary desktop-only" data-i18n="nav.contact">Contacto</a>
+      <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg class="icon"><use href="#icon-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel">
+  <a href="index.html" data-i18n="nav.home">Inicio</a>
+  <a href="servicios.html" data-i18n="nav.services">Servicios</a>
+  <a href="portafolio.html" data-i18n="nav.portfolio">Portafolio</a>
+  <a href="nosotros.html" data-i18n="nav.about">Nosotros</a>
+  <a href="cotizador.html" data-i18n="nav.quote">Cotizador</a>
+  <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+  <a href="contacto.html" class="btn btn-primary btn-block" data-i18n="nav.contact">Contacto</a>
+</div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb reveal">
+        <a href="index.html" data-i18n="nav.home">Inicio</a> <span>/</span> <span data-i18n="nav.quote">Cotizador</span>
+      </div>
+      <span class="eyebrow reveal" data-i18n="quote.hero.eyebrow">Cotizador interactivo</span>
+      <h1 class="reveal-clip" style="margin-top:1rem;max-width:20ch" data-i18n="quote.hero.title">Calcula el estimado de tu proyecto en minutos</h1>
+      <p class="lede reveal" data-i18n="quote.hero.lede">Responde algunas preguntas sobre lo que necesitas y te mostramos un rango de inversión estimado al instante. Es solo una referencia inicial: la cotización final se ajusta a los detalles exactos de tu proyecto.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+
+      <div class="quote-steps reveal">
+        <div class="quote-step-dot active" data-step="1"><span class="num">1</span><span data-i18n="quote.step1.label">Servicio</span></div>
+        <div class="quote-step-line"></div>
+        <div class="quote-step-dot" data-step="2"><span class="num">2</span><span data-i18n="quote.step2.label">Alcance</span></div>
+        <div class="quote-step-line"></div>
+        <div class="quote-step-dot" data-step="3"><span class="num">3</span><span data-i18n="quote.step3.label">Contacto</span></div>
+      </div>
+
+      <div class="quote-layout">
+        <form data-quote-form novalidate>
+
+          <!-- ============ STEP 1: SERVICE ============ -->
+          <div class="quote-panel is-active" data-step="1">
+            <div class="card reveal">
+              <h3 data-i18n="quote.s1.title">¿Qué necesitas para tu empresa?</h3>
+              <div class="option-grid" data-field="service" style="margin-top:1.5rem">
+                <label class="option-card">
+                  <input type="radio" name="service" value="marketing">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <div class="icon-tile outline" style="margin-bottom:.25rem"><svg class="icon"><use href="#icon-megaphone"></use></svg></div>
+                  <b data-i18n="quote.s1.marketing.title">Marketing Digital</b>
+                  <span data-i18n="quote.s1.marketing.desc">Redes sociales, publicidad y branding.</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="service" value="web">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <div class="icon-tile outline" style="margin-bottom:.25rem"><svg class="icon"><use href="#icon-code"></use></svg></div>
+                  <b data-i18n="quote.s1.web.title">Desarrollo Web</b>
+                  <span data-i18n="quote.s1.web.desc">Sitio, landing page o tienda en línea.</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="service" value="apps">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <div class="icon-tile outline" style="margin-bottom:.25rem"><svg class="icon"><use href="#icon-devices"></use></svg></div>
+                  <b data-i18n="quote.s1.apps.title">App o Software</b>
+                  <span data-i18n="quote.s1.apps.desc">Aplicación o plataforma a medida.</span>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="service" value="tools">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <div class="icon-tile outline" style="margin-bottom:.25rem"><svg class="icon"><use href="#icon-calculator"></use></svg></div>
+                  <b data-i18n="quote.s1.tools.title">Herramienta de Cálculo</b>
+                  <span data-i18n="quote.s1.tools.desc">Automatización de un proceso interno.</span>
+                </label>
+              </div>
+              <div style="display:flex;justify-content:flex-end;margin-top:2rem">
+                <button type="button" class="btn btn-primary" data-step-next data-i18n="quote.s1.next">Continuar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ STEP 2: SCOPE ============ -->
+          <div class="quote-panel" data-step="2">
+            <div class="card reveal">
+              <h3 data-i18n="quote.s2.title">Cuéntanos el alcance</h3>
+
+              <p class="form-field label" style="margin-top:1.5rem;margin-bottom:.5rem;font-weight:600" data-i18n="quote.s2.scope.label">Tamaño del proyecto</p>
+              <div class="option-grid" style="grid-template-columns:repeat(3,1fr)">
+                <label class="option-card">
+                  <input type="radio" name="scope" value="basic">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.scope.basic">Esencial</b>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="scope" value="standard" checked>
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.scope.standard">Estándar</b>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="scope" value="advanced">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.scope.advanced">Avanzado</b>
+                </label>
+              </div>
+
+              <div class="range-field" data-field="pages" style="margin-top:2rem">
+                <label for="pagesRange" data-i18n="quote.s2.pages.label" style="font-weight:600;font-size:var(--fs-sm)">Número de páginas o módulos aproximado</label>
+                <input id="pagesRange" type="range" min="1" max="30" value="5">
+                <div class="range-value"><span>1</span><b><span data-pages-value>5</span></b><span>30</span></div>
+              </div>
+
+              <p class="form-field label" style="margin-top:2rem;margin-bottom:.5rem;font-weight:600" data-i18n="quote.s2.integrations.label">¿Necesitas integraciones? (pagos, WhatsApp, sistemas existentes)</p>
+              <div class="option-grid" style="grid-template-columns:repeat(2,1fr)">
+                <label class="option-card">
+                  <input type="radio" name="integrations" value="yes">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.integrations.yes">Sí</b>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="integrations" value="no">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.integrations.no">No</b>
+                </label>
+              </div>
+
+              <p class="form-field label" style="margin-top:2rem;margin-bottom:.5rem;font-weight:600" data-i18n="quote.s2.timeline.label">¿Cuándo te gustaría lanzar?</p>
+              <div class="option-grid" style="grid-template-columns:repeat(2,1fr)">
+                <label class="option-card">
+                  <input type="radio" name="timeline" value="normal" checked>
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.timeline.normal">Tiempo normal</b>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="timeline" value="urgent">
+                  <svg class="icon check"><use href="#icon-check-circle"></use></svg>
+                  <b data-i18n="quote.s2.timeline.urgent">Es urgente</b>
+                </label>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-top:2rem">
+                <button type="button" class="btn btn-ghost" data-step-back data-i18n="quote.s2.back">Atrás</button>
+                <button type="button" class="btn btn-primary" data-step-next data-i18n="quote.s2.next">Continuar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ STEP 3: CONTACT ============ -->
+          <div class="quote-panel" data-step="3">
+            <div class="card reveal">
+              <h3 data-i18n="quote.s3.title">¿Dónde te enviamos la propuesta?</h3>
+
+              <div class="form-row" style="margin-top:1.5rem">
+                <div class="form-field" data-field="name">
+                  <label for="qName" data-i18n="quote.s3.name">Nombre completo <span class="required-mark">*</span></label>
+                  <input id="qName" type="text" name="name" autocomplete="name" required>
+                  <span class="error-msg" data-i18n="contact.form.required">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-field">
+                  <label for="qCompany" data-i18n="quote.s3.company">Empresa</label>
+                  <input id="qCompany" type="text" name="company" autocomplete="organization">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field" data-field="email">
+                  <label for="qEmail" data-i18n="quote.s3.email">Correo electrónico</label>
+                  <input id="qEmail" type="email" name="email" autocomplete="email">
+                  <span class="error-msg" data-i18n="contact.form.invalid.email">Ingresa un correo electrónico válido.</span>
+                </div>
+                <div class="form-field" data-field="phone">
+                  <label for="qPhone" data-i18n="quote.s3.phone">WhatsApp <span class="required-mark">*</span></label>
+                  <input id="qPhone" type="tel" name="phone" autocomplete="tel" required>
+                  <span class="error-msg" data-i18n="contact.form.required">Este campo es obligatorio.</span>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="qNotes" data-i18n="quote.s3.notes">Detalles adicionales (opcional)</label>
+                <textarea id="qNotes" name="notes"></textarea>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-top:1rem">
+                <button type="button" class="btn btn-ghost" data-step-back data-i18n="quote.s3.back">Atrás</button>
+                <button type="submit" class="btn btn-whatsapp">
+                  <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+                  <span data-i18n="quote.s3.submit">Enviar por WhatsApp</span>
+                </button>
+              </div>
+
+              <div class="badge-pill success" data-quote-success style="display:none;margin-top:1.25rem">
+                <svg class="icon"><use href="#icon-check-circle"></use></svg>
+                <span data-i18n="contact.form.success">¡Listo! Abrimos WhatsApp con tu mensaje para que lo envíes.</span>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+        <aside class="quote-summary reveal">
+          <h4 data-i18n="quote.summary.title">Resumen de tu estimado</h4>
+
+          <p data-summary-empty data-i18n="quote.summary.empty" style="margin-top:1rem;font-size:var(--fs-sm)">Completa el paso 1 para ver tu estimado.</p>
+
+          <div data-summary-filled style="display:none">
+            <div class="quote-summary-line"><span data-i18n="quote.summary.service">Servicio</span><b data-summary-service></b></div>
+            <div class="quote-summary-line"><span data-i18n="quote.summary.scope">Tamaño</span><b data-summary-scope></b></div>
+            <div class="quote-summary-line"><span data-i18n="quote.summary.pages">Páginas / módulos</span><b data-summary-pages></b></div>
+            <div class="quote-summary-line"><span data-i18n="quote.summary.integrations">Integraciones</span><b data-summary-integrations></b></div>
+            <div class="quote-summary-line"><span data-i18n="quote.summary.timeline">Tiempo de entrega</span><b data-summary-timeline></b></div>
+            <div class="quote-total">
+              <span data-i18n="quote.summary.total" style="font-size:var(--fs-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em">Inversión estimada</span>
+              <div class="amount text-gradient" data-summary-total>—</div>
+              <p style="font-size:var(--fs-xs);margin-top:.75rem" data-i18n="quote.summary.disclaimer">Rango referencial en Lempiras (HNL). El monto final se define tras una llamada de descubrimiento.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Lumena Group">
+          <img src="assets/img/logo-lumena-transparent.png" alt="Lumena Group" style="height:38px;width:auto">
+        </a>
+        <p data-i18n="footer.tagline">Diseñamos marketing digital, sitios web, apps y herramientas de cálculo a medida para empresas de Puerto Cortés y toda Honduras.</p>
+        <div class="social-row">
+          <a class="icon-btn" href="https://www.instagram.com/lumenamkt?igsh=MTdiOXc4M3N5MjI0Yw==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="icon"><use href="#icon-instagram"></use></svg>
+          </a>
+          <a class="icon-btn" href="https://www.facebook.com/share/1AxKSv87Qi/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg class="icon"><use href="#icon-facebook"></use></svg>
+          </a>
+          <a class="icon-btn" href="https://wa.me/50495382344" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.nav.title">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="portafolio.html" data-i18n="nav.portfolio">Portafolio</a></li>
+          <li><a href="nosotros.html" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="cotizador.html" data-i18n="nav.quote">Cotizador</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services.title">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html#marketing" data-i18n="footer.services.marketing">Marketing Digital</a></li>
+          <li><a href="servicios.html#web" data-i18n="footer.services.web">Desarrollo Web</a></li>
+          <li><a href="servicios.html#apps" data-i18n="footer.services.apps">Apps y Software</a></li>
+          <li><a href="servicios.html#herramientas" data-i18n="footer.services.tools">Herramientas de Cálculo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.contact.title">Contacto</h4>
+        <ul>
+          <li><svg class="icon" style="width:1rem;height:1rem"><use href="#icon-whatsapp"></use></svg><a href="https://wa.me/50495382344" target="_blank" rel="noopener">+504 9538-2344</a></li>
+          <li><svg class="icon" style="width:1rem;height:1rem"><use href="#icon-whatsapp"></use></svg><a href="https://wa.me/50432030863" target="_blank" rel="noopener">+504 3203-0863</a></li>
+          <li><svg class="icon" style="width:1rem;height:1rem"><use href="#icon-map-pin"></use></svg><span data-i18n="footer.contact.location">Puerto Cortés, Cortés, Honduras</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="current-year"></span> Lumena Group. <span data-i18n="footer.rights">Todos los derechos reservados.</span></span>
+      <span data-i18n="footer.madeby">Diseñado y desarrollado por Lumena Group</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/50495382344" class="wa-float" target="_blank" rel="noopener" data-i18n-aria="wa.float.label" aria-label="Escríbenos por WhatsApp">
+  <svg class="icon"><use href="#icon-whatsapp"></use></svg>
+</a>
+
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/calculator.js" defer></script>
+</body>
+</html>
