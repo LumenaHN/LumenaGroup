@@ -511,7 +511,12 @@ svg.icon {
   padding: clamp(1.5rem, 2.5vw, 2.1rem);
   transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base), box-shadow var(--dur-base);
 }
-.card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
+/* .card.card (repeated class) bumps specificity past .reveal.is-visible's
+   `transform: none` — same equal-specificity/source-order trap as the logo
+   hover fix above. Every service/portfolio/testimonial card also carries
+   .reveal, so without this the lift-on-hover silently stopped working the
+   moment a card had already scrolled into view once. */
+.card.card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
 
 .icon-tile {
   width: 52px; height: 52px;
@@ -562,7 +567,32 @@ svg.icon {
   margin-block: var(--section-py);
   color: var(--border-strong);
 }
-.rays-divider svg { width: clamp(64px, 10vw, 96px); height: auto; color: var(--brand-blue); opacity: 0.55; }
+.rays-divider svg { width: clamp(64px, 10vw, 96px); height: auto; }
+/* Each ray carries its own color/opacity/glow transition — not just a shared
+   one on the <svg> — so every line genuinely ignites in sequence instead of
+   all five silently turning blue together while only their fade is staggered. */
+.rays-divider svg line {
+  stroke: var(--text-muted);
+  opacity: 0.22;
+  transition: stroke 0.5s var(--ease-out), opacity 0.5s var(--ease-out), filter 0.5s var(--ease-out);
+}
+.rays-divider.is-visible svg line {
+  stroke: var(--brand-blue);
+  opacity: 1;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--brand-blue) 90%, transparent));
+}
+.rays-divider svg line:nth-child(1) { transition-delay: 0s; }
+.rays-divider svg line:nth-child(2) { transition-delay: 0.12s; }
+.rays-divider svg line:nth-child(3) { transition-delay: 0.12s; }
+.rays-divider svg line:nth-child(4) { transition-delay: 0.24s; }
+.rays-divider svg line:nth-child(5) { transition-delay: 0.24s; }
+/* Once every ray has finished igniting (last delay 0.24s + 0.5s transition),
+   the whole icon settles into a stronger, slower breathing glow. */
+.rays-divider.is-visible svg { animation: rays-pulse 3.2s var(--ease-in-out) 0.85s infinite; }
+@keyframes rays-pulse {
+  0%, 100% { filter: drop-shadow(0 0 7px color-mix(in srgb, var(--brand-blue) 80%, transparent)); }
+  50% { filter: drop-shadow(0 0 20px color-mix(in srgb, var(--brand-blue) 100%, transparent)); }
+}
 .rays-divider::before, .rays-divider::after {
   content: "";
   flex: 1;
@@ -897,8 +927,12 @@ svg.icon {
   width: auto;
   object-fit: contain;
 }
-.logo-cloud-item:hover, .logo-cloud-item:focus-visible {
-  transform: translateY(-3px);
+/* Qualified with .logo-cloud so this beats .reveal.is-visible's `transform:
+   none` on specificity (both are 0,2,0 otherwise, and .reveal.is-visible
+   sits later in the file — without this, the hover scale gets silently
+   cancelled the instant the logo has scrolled into view once). */
+.logo-cloud .logo-cloud-item:hover, .logo-cloud .logo-cloud-item:focus-visible {
+  transform: translateY(-3px) scale(1.18);
 }
 
 /* ---------- WhatsApp floating button ---------- */
@@ -972,6 +1006,40 @@ svg.icon {
     min-width: 0;
   }
 }
+
+/* ---------- Neon cursor (desktop + dark theme only, see cursor.js) ---------- */
+html.has-neon-cursor:not([data-theme="light"]),
+html.has-neon-cursor:not([data-theme="light"]) * {
+  cursor: none !important;
+}
+.neon-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  z-index: 9999;
+  color: var(--brand-blue-light);
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 6px color-mix(in srgb, var(--brand-blue) 85%, transparent))
+    drop-shadow(0 0 14px color-mix(in srgb, var(--brand-blue) 50%, transparent));
+  transition: opacity 0.25s ease-out, filter 0.25s ease-out, color 0.25s ease-out;
+  will-change: transform;
+}
+.neon-cursor svg { width: 100%; height: 100%; display: block; transition: transform 0.2s var(--ease-out); }
+:root[data-theme="light"] .neon-cursor { display: none; }
+html.has-neon-cursor:not([data-theme="light"]) .neon-cursor { opacity: 1; }
+.neon-cursor.is-hidden { opacity: 0 !important; }
+.neon-cursor.is-hover {
+  color: var(--brand-purple-light);
+  filter:
+    drop-shadow(0 0 8px color-mix(in srgb, var(--brand-purple) 95%, transparent))
+    drop-shadow(0 0 20px color-mix(in srgb, var(--brand-purple) 65%, transparent));
+}
+.neon-cursor.is-hover svg { transform: scale(1.2); }
+.neon-cursor.is-down svg { transform: scale(0.85); }
 
 /* ---------- Reveal animation classes ---------- */
 .reveal { opacity: 0; transform: translateY(28px); }
