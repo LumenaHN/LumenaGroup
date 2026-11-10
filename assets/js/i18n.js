@@ -206,7 +206,7 @@ window.LUMENA_I18N = {
     "portfolio.match.r1.label": "Plataforma a medida",
     "portfolio.match.r2.value": "3",
     "portfolio.match.r2.label": "Pasos del registro a la postulación",
-    "portfolio.match.preview": "Plataforma de postulantes",
+    "portfolio.match.cta": "Visitar sitio en vivo",
 
     "portfolio.cta.title": "¿Tu empresa necesita algo parecido?",
     "portfolio.cta.lede": "Cuéntanos tu proceso y te decimos cómo automatizarlo o cómo llevar tu marca al siguiente nivel.",
@@ -535,7 +535,7 @@ window.LUMENA_I18N = {
     "portfolio.match.r1.label": "Custom platform",
     "portfolio.match.r2.value": "3",
     "portfolio.match.r2.label": "Steps from sign-up to application",
-    "portfolio.match.preview": "Job-seeker platform",
+    "portfolio.match.cta": "Visit live site",
 
     "portfolio.cta.title": "Does your company need something similar?",
     "portfolio.cta.lede": "Tell us about your process and we'll show you how to automate it or take your brand to the next level.",
